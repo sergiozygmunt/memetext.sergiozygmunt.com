@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> sPoNgEbOb mEmE GeNeRaToR </title>
+    <link rel="stylesheet" type="text/css" href="/css/basscss.min.css">
+    <script type="text/javascript" src="/js/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/templates/templates.js"></script>
+    <script type="text/javascript" src="/templates/ga.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <script src="https://use.fontawesome.com/83536f4ef8.js"></script>
+
+    <style>
+      .btnz {
+        display: block;
+        float: left;
+        padding: 10px 15px;
+        border:none;
+        background-color: #ececec;
+        text-decoration: none;
+        font-size: 18px;
+        color: #FFF;
+      }
+      #inputText{
+        width: 52em;
+      }
+      .btnz:hover {
+        color: #efefef;
+      }
+      .twitter {
+        background-color: #55acee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navHeader"></div>
+
+    <section class="container px1 py1">
+      <div>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <h1>sPoNgEbOb mEmE GeNeRaToR</h1>
+        <br>
+        <input id="inputText" name="inputText" type="text" value=""/>
+      </div>
+      <div>
+        <br/>
+        <button id="submitButton" class="button rounded" onclick="generateSpongebobText()">gEnErAtE SpOnGeBoB TeXt!</button></p>
+        <button id="submitButton" class="button rounded" onclick="generateSpacedText()">g e n e r a t e  s p a c e d t e x t</button></p>
+        <button id="submitButton" class="button rounded" onclick="generateSpongebobAndSpacedText()">g E n E r A t E b O t H!</button></p>
+      </div>
+    </br>
+      <div>
+        <input id="outputText" name="outputText" size="52" onclick="select()" type="text" value=""/>
+        <br>
+        <br>
+        <img id='image' src="/assets/images/mocking-spongebob.jpg" style="display: none" />
+      </div>
+      
+      <div class="px1">
+        <h2><span id="subject"></span> <span id="action"></span> <span id="object"></span></h2>
+        <a class="button rounded" target="_blank" href="https://s.psdsuc.com/ktx1m" id="twitterShare" ></i> Based upon open source software.</a>
+      </div>
+      
+    </section>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div id="navFooter"></div>
+    <script type="text/javascript">
+
+      function generateSpongebobText () {
+        var input = document.getElementById('inputText').value;
+        var res = "";
+        for (i=0; i < input.length; i++) {
+           res += i % 2 == 0 ? input.charAt(i).toLowerCase() : input.charAt(i).toUpperCase();
+        }
+        document.getElementById('outputText').value = res;
+        $( "#image" ).show();
+      }
+
+      function generateSpacedText () {
+        $( "#image" ).hide();
+        var input = document.getElementById('inputText').value;
+        var res = input.split('').join(' ');
+        document.getElementById('outputText').value = res;
+
+      }
+
+      function generateSpongebobAndSpacedText () {
+        var input = document.getElementById('inputText').value;
+        var res = "";
+        for (i=0; i < input.length; i++) {
+           res += i % 2 == 0 ? input.charAt(i).toLowerCase() : input.charAt(i).toUpperCase();
+        }
+        res = res.split('').join(' ');
+        document.getElementById('outputText').value = res;
+
+        
+      }
+
+      $("#inputText").keyup(function(event) {
+        if (event.keyCode === 13) {
+          generateSpongebobText();
+        }
+      });
+
+      $("#inputText").onchange(function(event) {
+        generateSpongebobText();
+      });
+    </script>
+  </body>
+</html>
