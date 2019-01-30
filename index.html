@@ -46,6 +46,7 @@
         <br/>
         <button id="submitButton" class="button rounded" onclick="generateSpongebobText()">gEnErAtE SpOnGeBoB TeXt!</button></p>
         <button id="submitButton" class="button rounded" onclick="generateSpacedText()">g e n e r a t e  s p a c e d t e x t</button></p>
+        <button id="submitButton" class="button rounded" onclick="generateClappedText()">generate 👏 clapped 👏 text</button></p>
         <button id="submitButton" class="button rounded" onclick="generateSpongebobAndSpacedText()">g E n E r A t E b O t H!</button></p>
       </div>
     </br>
@@ -84,7 +85,13 @@
         var input = document.getElementById('inputText').value;
         var res = input.split('').join(' ');
         document.getElementById('outputText').value = res;
+      }
 
+      function generateClappedText () {
+        $( "#image" ).hide();
+        var input = document.getElementById('inputText').value;
+        var res = input.split(' ').join(' 👏 ');
+        document.getElementById('outputText').value = res;
       }
 
       function generateSpongebobAndSpacedText () {
